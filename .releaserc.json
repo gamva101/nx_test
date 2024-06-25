@@ -1,21 +1,11 @@
 {
   "branches": ["main"],
   "plugins": [
-    "@semantic-release/commit-analyzer",
+    ["@semantic-release/commit-analyzer", {
+      "preset": "./changelog-config.js"
+    }],
     ["@semantic-release/release-notes-generator", {
-      "preset": "angular",
-      "presetConfig": {
-        "types": [
-          {"type": "feat", "section": "Features"},
-          {"type": "fix", "section": "Bug Fixes"},
-          {"type": "chore", "hidden": true},
-          {"type": "docs", "hidden": true},
-          {"type": "style", "hidden": true},
-          {"type": "refactor", "hidden": true},
-          {"type": "perf", "hidden": true},
-          {"type": "test", "hidden": true}
-        ]
-      }
+      "preset": "./changelog-config.js"
     }],
     ["@semantic-release/changelog", {
       "changelogFile": "CHANGELOG.md"
